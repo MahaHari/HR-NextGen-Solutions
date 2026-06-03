@@ -1,0 +1,136 @@
+/* =========================================
+   HR NextGen Solutions - Responsive CSS
+   Mobile-First Breakpoints
+   ========================================= */
+
+/* ---- Tablet: 1024px ---- */
+@media (max-width: 1024px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .ai-products-grid { grid-template-columns: repeat(2, 1fr); }
+  .industries-grid { grid-template-columns: repeat(2, 1fr); }
+  .case-studies-grid { grid-template-columns: repeat(2, 1fr); }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .contact-grid { gap: var(--space-10); }
+  .nav-mega { min-width: 380px; }
+
+  .process-steps { grid-template-columns: repeat(3, 1fr); }
+  .process-steps::before { display: none; }
+  .process-line-fill { display: none; }
+
+  .hero-stats { gap: 0; }
+}
+
+/* ---- Large Mobile: 768px ---- */
+@media (max-width: 768px) {
+  /* Layout */
+  :root {
+    --header-height: 64px;
+    --header-height-scrolled: 56px;
+  }
+  .section { padding-top: var(--space-16); padding-bottom: var(--space-16); }
+  .container { padding-left: var(--space-5); padding-right: var(--space-5); }
+
+  /* Hide desktop nav, show hamburger */
+  .header-nav { display: none; }
+  .header-cta .btn-primary { display: none; }
+  .hamburger { display: flex; }
+
+  /* Services */
+  .services-grid { grid-template-columns: 1fr; gap: var(--space-4); }
+
+  /* AI Products */
+  .ai-products-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Industries */
+  .industries-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Features */
+  .features-grid { grid-template-columns: 1fr; }
+
+  /* Case Studies */
+  .case-studies-grid { grid-template-columns: 1fr; }
+  .case-study-results { grid-template-columns: repeat(3, 1fr); }
+
+  /* Process */
+  .process-desktop { display: none; }
+  .process-mobile { display: block; }
+
+  /* Testimonials */
+  .testimonial-slide { padding: 0 var(--space-4); }
+  .testimonial-card { padding: var(--space-8); }
+  .testimonial-quote { font-size: var(--text-lg); }
+  .testimonial-author { flex-direction: column; }
+  .author-info { text-align: center; }
+
+  /* Contact */
+  .contact-grid { grid-template-columns: 1fr; gap: var(--space-10); }
+  .form-row { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr; gap: var(--space-8); }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  /* Hero */
+  .hero-stats { flex-wrap: wrap; }
+  .hero-stat { min-width: 45%; }
+  .hero-stat:not(:last-child)::after { display: none; }
+  .hero-shape { display: none; }
+
+  /* Trusted By */
+  .marquee-wrapper::before,
+  .marquee-wrapper::after { width: 60px; }
+}
+
+/* ---- Small Mobile: 480px ---- */
+@media (max-width: 480px) {
+  /* Hero */
+  .hero-inner { padding: var(--space-16) var(--space-5); }
+  .hero p { font-size: var(--text-base); }
+  .btn-group { flex-direction: column; align-items: stretch; }
+  .btn-group .btn { justify-content: center; }
+  .hero-stat-value { font-size: var(--text-3xl); }
+  .hero-stat { min-width: 100%; }
+  .hero-stat:not(:last-child)::after { display: none; }
+
+  /* AI Products */
+  .ai-products-grid { grid-template-columns: 1fr; }
+
+  /* Industries */
+  .industries-grid { grid-template-columns: 1fr; }
+
+  /* Case Studies */
+  .case-study-results { grid-template-columns: 1fr; text-align: center; }
+
+  /* Contact */
+  .contact-form-card { padding: var(--space-6); }
+
+  /* Footer */
+  .footer-legal-links { flex-direction: column; align-items: center; gap: var(--space-3); }
+
+  /* Sections */
+  .section { padding-top: var(--space-12); padding-bottom: var(--space-12); }
+  .section-header { margin-bottom: var(--space-8); }
+
+  /* Process accordion */
+  .process-accordion-header { padding: var(--space-3) var(--space-4); }
+  .process-accordion-body { padding: var(--space-3) var(--space-4) var(--space-4); }
+
+  /* Testimonial */
+  .testimonial-slide { padding: 0 var(--space-2); }
+  .testimonial-card { padding: var(--space-6); }
+  .quote-mark { font-size: 60px; }
+  .testimonial-quote { font-size: var(--text-base); }
+
+  /* Buttons */
+  .btn-lg { padding: 14px 28px; font-size: var(--text-base); }
+
+  /* Back to top */
+  .back-to-top { bottom: var(--space-4); right: var(--space-4); }
+}
+
+/* ---- Large Desktop: 1280px ---- */
+@media (min-width: 1280px) {
+  .hero h1 { font-size: 4.5rem; }
+  .vision-content h2 { font-size: 3.25rem; }
+}
