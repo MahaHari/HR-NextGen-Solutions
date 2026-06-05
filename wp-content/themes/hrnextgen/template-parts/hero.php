@@ -5,9 +5,19 @@
 $headline     = hngs_get_option('hngs_hero_headline', 'Building [gradient]Intelligent[/gradient] Software for the AI Era');
 $subheadline  = hngs_get_option('hngs_hero_subheadline', 'We help businesses transform through AI-powered applications, automation systems, custom software development, and intelligent digital experiences.');
 $cta1_label   = hngs_get_option('hngs_hero_cta_primary_label', 'Book a Consultation');
-$cta1_url     = hngs_get_option('hngs_hero_cta_primary_url', '#contact');
+$cta1_url     = hngs_get_option('hngs_hero_cta_primary_url', '');
 $cta2_label   = hngs_get_option('hngs_hero_cta_secondary_label', 'View Our Work');
-$cta2_url     = hngs_get_option('hngs_hero_cta_secondary_url', '#case-studies');
+$cta2_url     = hngs_get_option('hngs_hero_cta_secondary_url', '');
+
+// Fall back to contact/case-studies pages
+if ( ! $cta1_url ) {
+    $contact_page = get_page_by_path('contact');
+    $cta1_url = $contact_page ? get_permalink($contact_page->ID) : home_url('/contact/');
+}
+if ( ! $cta2_url ) {
+    $cs_url = get_post_type_archive_link('hngs_case_study');
+    $cta2_url = $cs_url ?: home_url('/case-studies/');
+}
 
 $stats = [];
 for ($i = 1; $i <= 4; $i++) {
@@ -20,38 +30,39 @@ for ($i = 1; $i <= 4; $i++) {
 ?>
 
 <section class="hero" id="hero" aria-label="Hero">
+
     <!-- Particle Canvas Background -->
     <canvas id="hero-canvas" aria-hidden="true"></canvas>
 
-    <!-- Gradient Overlays -->
+    <!-- Gradient Overlay -->
     <div class="hero-gradient-overlay" aria-hidden="true"></div>
 
-    <!-- Decorative Shapes -->
-    <div class="hero-shape hero-shape--1" aria-hidden="true"></div>
-    <div class="hero-shape hero-shape--2" aria-hidden="true"></div>
-    <div class="hero-shape hero-shape--3" aria-hidden="true"></div>
+    <!-- Ambient Glow Orbs -->
+    <div class="hero-orb hero-orb--1" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb--2" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb--3" aria-hidden="true"></div>
 
     <div class="hero-inner container">
 
         <!-- Eyebrow Label -->
-        <div class="hero-label" aria-hidden="true">
+        <div class="hero-label reveal" aria-hidden="true">
             <span class="hero-label-dot"></span>
             AI-First Software Company
         </div>
 
         <!-- Headline -->
-        <h1><?php echo hngs_parse_headline($headline); ?></h1>
+        <h1 class="reveal"><?php echo hngs_parse_headline($headline); ?></h1>
 
         <!-- Subheadline -->
-        <p><?php echo esc_html($subheadline); ?></p>
+        <p class="reveal"><?php echo esc_html($subheadline); ?></p>
 
         <!-- CTA Buttons -->
-        <div class="btn-group">
-            <a href="<?php echo esc_url($cta1_url); ?>" class="btn btn-primary btn-lg">
+        <div class="btn-group reveal">
+            <a href="<?php echo esc_url($cta1_url); ?>" class="btn btn-primary btn-xl">
                 <?php echo esc_html($cta1_label); ?>
                 <?php echo hngs_icon('arrow-right'); ?>
             </a>
-            <a href="<?php echo esc_url($cta2_url); ?>" class="btn btn-ghost-gradient btn-lg">
+            <a href="<?php echo esc_url($cta2_url); ?>" class="btn btn-ghost-white btn-xl">
                 <?php echo esc_html($cta2_label); ?>
             </a>
         </div>
@@ -59,7 +70,7 @@ for ($i = 1; $i <= 4; $i++) {
         <!-- Stats Bar -->
         <div class="hero-stats stagger-children" role="list" aria-label="Company statistics">
             <?php foreach ($stats as $stat): ?>
-            <div class="hero-stat reveal" role="listitem">
+            <div class="hero-stat" role="listitem">
                 <span class="hero-stat-value" data-target="<?php echo esc_attr($stat['value']); ?>">
                     <?php echo esc_html($stat['value']); ?>
                 </span>

@@ -1,124 +1,107 @@
 /* =========================================
-   HR NextGen Solutions - CSS Variables
-   Design Token System
+   HR NextGen Solutions v2 - CSS Variables
+   Light Theme Design Token System
    ========================================= */
 
 :root {
   /* Brand Colors */
-  --color-primary: #E91E7A;
-  --color-secondary: #6A1B9A;
-  --color-primary-light: #FF4FA0;
-  --color-secondary-light: #8E24AA;
-  --color-primary-dark: #C0155F;
+  --color-primary:        #E91E7A;
+  --color-secondary:      #6A1B9A;
+  --color-primary-light:  #FF4FA0;
+  --color-secondary-light:#8E24AA;
+  --color-primary-dark:   #C0155F;
   --color-secondary-dark: #4A1570;
 
   /* Brand Gradient */
-  --gradient-brand: linear-gradient(135deg, #E91E7A 0%, #6A1B9A 100%);
-  --gradient-brand-reverse: linear-gradient(135deg, #6A1B9A 0%, #E91E7A 100%);
-  --gradient-brand-soft: linear-gradient(135deg, rgba(233, 30, 122, 0.15) 0%, rgba(106, 27, 154, 0.15) 100%);
-  --gradient-hero: radial-gradient(ellipse at 20% 80%, rgba(233, 30, 122, 0.12) 0%, transparent 60%),
-                   radial-gradient(ellipse at 80% 20%, rgba(106, 27, 154, 0.12) 0%, transparent 60%);
+  --gradient-brand:        linear-gradient(135deg, #E91E7A 0%, #6A1B9A 100%);
+  --gradient-brand-reverse:linear-gradient(135deg, #6A1B9A 0%, #E91E7A 100%);
+  --gradient-brand-soft:   linear-gradient(135deg, rgba(233,30,122,0.08) 0%, rgba(106,27,154,0.08) 100%);
+  --gradient-hero:         linear-gradient(160deg, #0A0A1A 0%, #160B2C 50%, #0D0A1F 100%);
 
-  /* Background Colors */
-  --bg-dark: #06060A;
-  --bg-darker: #040408;
-  --bg-section-alt: #0C0C14;
-  --bg-card: rgba(255, 255, 255, 0.04);
-  --bg-card-hover: rgba(255, 255, 255, 0.07);
-  --bg-glass: rgba(255, 255, 255, 0.04);
-  --bg-glass-strong: rgba(255, 255, 255, 0.08);
-  --bg-overlay: rgba(6, 6, 10, 0.85);
+  /* ---- LIGHT THEME Backgrounds ---- */
+  --bg-page:          #FFFFFF;
+  --bg-alt:           #F7F7FC;
+  --bg-alt-2:         #F0F0FA;
+  --bg-card:          #FFFFFF;
+  --bg-card-hover:    #FAFAFF;
+  --bg-hero:          #06060F;           /* Hero stays dark for video banner */
+  --bg-cta:           linear-gradient(135deg, #E91E7A 0%, #6A1B9A 100%);
 
-  /* Text Colors */
-  --text-primary: #FFFFFF;
-  --text-secondary: rgba(255, 255, 255, 0.75);
-  --text-muted: rgba(255, 255, 255, 0.50);
-  --text-faint: rgba(255, 255, 255, 0.30);
+  /* Text — light theme */
+  --text-primary:   #12122A;
+  --text-secondary: #3D3D5C;
+  --text-muted:     #7A7A9D;
+  --text-faint:     #ADADC9;
+  --text-on-dark:   #FFFFFF;
+  --text-on-dark-muted: rgba(255,255,255,0.75);
 
-  /* Border Colors */
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-medium: rgba(255, 255, 255, 0.12);
-  --border-strong: rgba(255, 255, 255, 0.20);
-  --border-primary: rgba(233, 30, 122, 0.30);
+  /* Borders */
+  --border-subtle:  #EAEAF5;
+  --border-medium:  #D8D8EE;
+  --border-strong:  #BEBEDD;
+  --border-primary: rgba(233,30,122,0.25);
 
-  /* Shadow System */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
-  --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.6);
-  --shadow-glow-primary: 0 0 40px rgba(233, 30, 122, 0.20);
-  --shadow-glow-secondary: 0 0 40px rgba(106, 27, 154, 0.20);
-  --shadow-glow-strong: 0 0 60px rgba(233, 30, 122, 0.30);
-  --shadow-card-hover: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(233, 30, 122, 0.12);
+  /* Shadows — light theme */
+  --shadow-xs:    0 1px 3px rgba(18,18,42,0.06);
+  --shadow-sm:    0 2px 8px rgba(18,18,42,0.08);
+  --shadow-md:    0 4px 20px rgba(18,18,42,0.10);
+  --shadow-lg:    0 8px 40px rgba(18,18,42,0.12);
+  --shadow-xl:    0 16px 60px rgba(18,18,42,0.15);
+  --shadow-card:  0 2px 12px rgba(18,18,42,0.07);
+  --shadow-card-hover: 0 12px 40px rgba(18,18,42,0.14), 0 0 0 1px rgba(233,30,122,0.08);
+  --shadow-glow-primary: 0 4px 24px rgba(233,30,122,0.30);
+  --shadow-glow-btn:     0 6px 30px rgba(233,30,122,0.35);
 
   /* Spacing Scale (8px base) */
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 20px;
-  --space-6: 24px;
-  --space-8: 32px;
-  --space-10: 40px;
-  --space-12: 48px;
-  --space-16: 64px;
-  --space-20: 80px;
-  --space-24: 96px;
+  --space-1: 4px;   --space-2: 8px;   --space-3: 12px;
+  --space-4: 16px;  --space-5: 20px;  --space-6: 24px;
+  --space-8: 32px;  --space-10: 40px; --space-12: 48px;
+  --space-16: 64px; --space-20: 80px; --space-24: 96px;
   --space-32: 128px;
 
   /* Border Radius */
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --radius-2xl: 32px;
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-2xl:  32px;
   --radius-full: 9999px;
 
-  /* Typography Scale */
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.25rem;
-  --text-2xl: 1.5rem;
-  --text-3xl: 1.875rem;
-  --text-4xl: 2.25rem;
-  --text-5xl: 3rem;
-  --text-6xl: 3.75rem;
-  --text-7xl: 4.5rem;
+  /* Typography */
+  --text-xs:   0.75rem;   --text-sm:   0.875rem;
+  --text-base: 1rem;      --text-lg:   1.125rem;
+  --text-xl:   1.25rem;   --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;  --text-4xl:  2.25rem;
+  --text-5xl:  3rem;      --text-6xl:  3.75rem;
+  --text-7xl:  4.5rem;
 
   /* Font Weights */
-  --weight-regular: 400;
-  --weight-medium: 500;
+  --weight-regular:  400;
+  --weight-medium:   500;
   --weight-semibold: 600;
-  --weight-bold: 700;
-  --weight-extrabold: 800;
+  --weight-bold:     700;
+  --weight-extrabold:800;
 
   /* Line Heights */
-  --leading-tight: 1.2;
-  --leading-snug: 1.35;
-  --leading-normal: 1.5;
+  --leading-tight:   1.2;
+  --leading-snug:    1.35;
+  --leading-normal:  1.5;
   --leading-relaxed: 1.65;
 
   /* Transitions */
-  --transition-fast: 0.15s ease;
-  --transition-base: 0.25s ease;
-  --transition-slow: 0.4s ease;
+  --transition-fast:   0.15s ease;
+  --transition-base:   0.25s ease;
+  --transition-slow:   0.4s ease;
   --transition-slower: 0.6s ease;
 
-  /* Z-Index Layers */
-  --z-base: 1;
-  --z-card: 10;
-  --z-dropdown: 100;
-  --z-sticky: 200;
-  --z-overlay: 300;
-  --z-modal: 400;
-  --z-toast: 500;
+  /* Z-Index */
+  --z-base:    1;  --z-card:    10;
+  --z-dropdown:100; --z-sticky: 200;
+  --z-overlay: 300; --z-modal:  400; --z-toast: 500;
 
   /* Layout */
-  --container-max: 1280px;
-  --container-wide: 1440px;
-  --container-narrow: 900px;
-  --header-height: 80px;
-  --header-height-scrolled: 64px;
+  --container-max:    1280px;
+  --container-narrow: 960px;
+  --header-height:    72px;
+  --header-height-scrolled: 60px;
 }
